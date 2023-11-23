@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body {
+
+    text-align: center;
+}
+
+.boxer{
+
+    background-color: aquamarine;
+}
+input{
+    background-color: aqua;
+}
+
+    </style>
+</head>
+<body>
+    <div class="boxer">
+
+        <h1>EXERCICIO2</h1>
+    </div>
+    <div class="box">
+
+        <p>Leia as idades de duas crianças. Após, calcular e mostrar a soma das idades e a média.</p>
+        <input type="number" id='crianca1' placeholder="Digite a primeira idade">
+        <br><br>
+        <input type="number" id='crianca2' placeholder="Digite a segunda idade">
+        <br><br>
+        <button onclick="somamedia()">Enviar</button>
+    </div>
+</body>
+<script>
+    function somamedia()
+    {
+        var idade1 = parseInt(document.querySelector('#crianca1').value);
+        var idade2 = parseInt(document.querySelector('#crianca2').value);
+        var soma = idade1 + idade2;
+        media = soma / 2
+        console.log('Soma: ' + soma);
+        console.log('Média: ' + media);
+        alert('sua média é de:' +   media)
+    }
+</script>
+</body>
+</html>

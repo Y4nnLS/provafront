@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Estilo para o botão do menu */
+        .dropdown-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        /* Estilo para o conteúdo do menu */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        /* Estilo para os itens do menu */
+        .dropdown-content a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+        }
+        header {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Header</h1>
+        <nav>
+            <ul>
+                <li><a href="/prova/teste.html">teste</a></li>
+                <li><a href="/prova/formulário.html">forms</a></li>
+                <li><a href="/prova/javascript.html">javascript</a></li>
+                <a href="https://drive.google.com/drive/folders/1eWj4G31MJVJ5FH_RBQ14AiiFOz_MedpW">Drive</a>
+                <li><a href="#">nav</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Menu Dropdown -->
+    <button class="dropdown-button" onclick="toggleDropdown()">Menu</button>
+    <div id="myDropdown" class="dropdown-content">
+        <a href="#">Item 1</a>
+        <a href="#">Item 2</a>
+        <a href="#">Item 3</a>
+    </div>
+
+    <script>
+        // Função para mostrar/ocultar o menu dropdown
+        function toggleDropdown() {
+            var dropdown = document.getElementById("myDropdown");
+            if (dropdown.style.display === "block") {
+                dropdown.style.display = "none";
+            } else {
+                dropdown.style.display = "block";
+            }
+        }
+
+        // Fechar o menu dropdown quando o usuário clicar fora dele
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown-button')) {
+                var dropdown = document.getElementById("myDropdown");
+                if (dropdown.style.display === "block") {
+                    dropdown.style.display = "none";
+                }
+            }
+        }
+    </script>
+    
+</body>
+</html>

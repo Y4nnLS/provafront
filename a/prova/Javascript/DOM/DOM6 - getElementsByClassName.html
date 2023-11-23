@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manuplando o DOM</title>
+</head>
+<style>
+body{
+background-color: #bbffff;
+color:black;
+font:verdana
+}
+header {
+            background-color: #363030;
+            color: #fff;
+            padding: 10px 0;
+        }
+</style>
+<body>    
+    <main>
+      <header>
+        <h1>JAVASCRIPT -  INICIANDO COM DOM</h1>
+    </header>
+    <h2>DOM</h2>
+<p>Aqui vizualizaremos o resultado</p>
+<p>Aprendendo a utilizar o <strong>DOM</strong> em javascript</p>
+<div class="mens">Clique aqui</div>
+<script>
+let m = window.document.getElementsByClassName('mens') [0]
+m.innerText = "outro novo texto";
+</script> 
+    </main>
+    
+    <footer>
+        <p>Rodapé da página &copy; 2023</p>
+    </footer>
+    
+</body>
+</html>

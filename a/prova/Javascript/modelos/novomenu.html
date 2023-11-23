@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Estilos CSS */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        button {
+            margin: 20px;
+            font-size: 18px;
+            padding: 10px;
+        }
+
+        .lateral-menu {
+            width: 250px;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            right: -250px;
+            background-color: #333;
+            overflow-y: auto;
+            transition: right 0.3s ease-in-out;
+        }
+
+        .lateral-menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .lateral-menu ul li {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .lateral-menu ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            display: block;
+        }
+
+        .lateral-menu ul li a:hover {
+            background-color: #555;
+        }
+    </style>
+    <title>Menu Lateral</title>
+</head>
+<body>
+    <button id="toggle-menu">Menu</button>
+    <nav class="lateral-menu">
+        <ul>
+            <li><a href="#">Página Inicial</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+    <script>
+        // JavaScript
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggleButton = document.getElementById("toggle-menu");
+            const lateralMenu = document.querySelector(".lateral-menu");
+
+            let menuVisible = false;
+
+            toggleButton.addEventListener("click", function () {
+                if (menuVisible) {
+                    lateralMenu.style.right = "-250px";
+                    menuVisible = false;
+                } else {
+                    lateralMenu.style.right = "0";
+                    menuVisible = true;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

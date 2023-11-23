@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Nomes e Telefones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+            width: 250px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Lista de Nomes e Telefones</h2>
+
+    <form id="contactForm">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" required>
+
+        <label for="phone">Telefone:</label>
+        <input type="tel" id="phone" required pattern="\d{10}" title="Digite um número de telefone válido (10 dígitos)." placeholder="Ex: 1234567890">
+
+        <button type="button" onclick="addContact()">Adicionar</button>
+    </form>
+
+    <ul id="contactList"></ul>
+
+    <script>
+        let contacts = [];
+
+        function addContact() {
+            const name = document.getElementById("name").value;
+            const phone = document.getElementById("phone").value;
+
+            if (name && phone && isValidPhoneNumber(phone)) {
+                const isDuplicate = contacts.some(contact => contact.name === name || contact.phone === phone);
+
+                if (!isDuplicate) {
+                    contacts.push({ name, phone });
+                    updateContactList();
+                } else {
+                    alert("Nome ou número de telefone já existe na lista.");
+                }
+
+                document.getElementById("name").value = "";
+                document.getElementById("phone").value = "";
+            } else {
+                alert("Por favor, preencha todos os campos e insira um número de telefone válido.");
+            }
+        }
+
+        function updateContactList() {
+            const contactListElement = document.getElementById("contactList");
+            contactListElement.innerHTML = "";
+
+            contacts.forEach(contact => {
+                const li = document.createElement("li");
+                li.textContent = `${contact.name}: ${contact.phone}`;
+                contactListElement.appendChild(li);
+            });
+        }
+
+        function isValidPhoneNumber(phone) {
+            return /^\d{10}$/.test(phone);
+        }
+    </script>
+
+</body>
+</html>

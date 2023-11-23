@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+    width: 60%;
+    min-width: 450px;
+    text-align: right;
+}
+
+form label {
+    display: inline-block;
+    width: calc(20% - 30px);
+    text-align: left;
+    margin: 10px;
+}
+
+form label.erro{
+    width: calc(100% - 20px);
+    padding: 10px;
+    background-color: rgb(255, 190, 190);
+    color: rgb(86, 2, 2);
+    text-align: center;
+}
+
+form label.sucesso{
+    width: calc(100% - 20px);
+    padding: 10px;
+    background-color: rgb(190, 255, 212);
+    color: rgb(2, 86, 41);
+    text-align: center;
+}
+
+form input {
+    width: calc(80% - 22px);
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+header {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Header</h1>
+        <nav>
+            <ul>
+                <li><a href="/prova/teste.html">teste</a></li>
+                <li><a href="/prova/formulário.html">forms</a></li>
+                <li><a href="/prova/javascript.html">javascript</a></li>
+                <a href="https://drive.google.com/drive/folders/1eWj4G31MJVJ5FH_RBQ14AiiFOz_MedpW">Drive</a>
+                <li><a href="#">nav</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="usuarios">   
+        <h2>Cadastro de Usuário</h2>
+        <form onsubmit="salvarUsuario(event)">
+            <label for="nome">Nome: </label> <input type="text" name="nome" id="nome" required>
+            <label for="email">E-mail: </label> <input type="email" name="email" id="email" required>
+            <label for="senha">Senha: </label> <input type="password" name="senha" id="senha" required>
+            <label for="confSenha">Confirmar Senha: </label> <input type="password" name="confSenha" id="confSenha" required>
+            <button type="submit" >Salvar</button>
+        </form>
+</body>
+</html>

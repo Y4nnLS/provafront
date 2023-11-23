@@ -1,0 +1,99 @@
+<!DOCTYPE html> <!-- Declaração do tipo de documento como HTML5 -->
+<html lang="pt-BR"> <!-- Início da marcação HTML, com especificação do idioma como Português Brasileiro -->
+<head>
+  <meta charset="UTF-8"> <!-- Configura a codificação de caracteres para UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura a viewport para dispositivos móveis -->
+  <title>Menu Dropdown</title> <!-- Define o título da página exibido na barra de título do navegador -->
+  <style>
+    /* Estilos da Página */
+    html, body { background: #1abc9c; } /* Define um fundo verde claro para a página */
+  
+    nav { margin-top: 40px; } /* Adiciona uma margem superior de 40 pixels ao elemento "nav" */
+  
+    /* Estilos do Menu Suspenso associados a NAV*/
+    .drop-down {
+      list-style: none; /* Remove os marcadores de lista padrão (pontos) */
+      overflow: hidden; /* Esconde o conteúdo que transborda do elemento */
+      height: 172px; /* Define a altura do menu suspenso */
+      background-color: #34495e; /* Define a cor de fundo do menu suspenso */
+      font-family: Arial; /* Define a fonte usada para o texto no menu suspenso */
+      width: 200px; /* Define a largura do menu suspenso */
+      margin: 0 auto; /* Centraliza o menu suspenso horizontalmente na página */
+      padding: 0; /* Remove o preenchimento interno (espaço interno) do menu suspenso */
+      text-align: center; /* Centraliza o texto no menu suspenso */
+      -webkit-transition: height 0.3s ease; /* Define uma transição suave para a altura do menu suspenso */
+      transition: height 0.3s ease; /* Define uma transição suave para a altura do menu suspenso */
+    }
+  
+    /* Quando o menu está fechado */
+    .drop-down.closed {
+      height: 43px; /* Define a altura do menu suspenso quando está fechado */
+    }
+  
+    .drop-down li {
+      border-bottom: 5px solid #2c3e50; /* Adiciona uma borda inferior aos itens da lista */
+    }
+    
+    .drop-down li a {
+      display: block; /* Define os links como elementos de bloco (ocupam toda a largura disponível) */
+      color: #ecf0f1; /* Define a cor do texto dos links */
+      text-decoration: none; /* Remove a decoração de texto (sublinhado) dos links */
+      padding: 10px; /* Adiciona preenchimento interno aos links para criar uma área de toque maior */
+    }
+      
+  </style>
+</head>
+<body>
+  <nav>
+    <ul class="drop-down closed"> <!-- Cria uma lista não ordenada com a classe "drop-down" e a classe "closed" (inicialmente fechada) -->
+      <li><a href="#" class="nav-button">Home</a></li> <!-- Cria um item de lista com um link para a página "Home" -->
+      <li><a href="#">Sobre</a></li> <!-- Cria um item de lista com um link para a página "Sobre" -->
+      <li><a href="#">Biblioteca</a></li> <!-- Cria um item de lista com um link para a página "Biblioteca" -->
+      <li><a href="#">Contato</a></li> <!-- Cria um item de lista com um link para a página "Contato" -->
+    </ul>
+  </nav>
+
+  <script>
+    (function() {
+      // Vincula o evento de clique ao botão de navegação do dropdown
+      document.querySelector('.nav-button').addEventListener('click', function() {
+        // Alterna a classe CSS "closed", que reduz a altura da UL e esconde os LI, exceto o primeiro
+        this.parentNode.parentNode.classList.toggle('closed')
+      }, false);
+    })();
+  </script>
+</body>
+</html>
+
+<!--
+HTML (Linha 5-19):
+
+Linha 1: Declaração do tipo de documento como HTML5 (<!DOCTYPE html>).
+Linha 2: Abertura do elemento HTML (<html>).
+Linha 3-52: Sessão HEAD:
+Linha 4: Configuração da codificação de caracteres (<meta charset="UTF-8">).
+Linha 5: Configuração da viewport para dispositivos móveis (<meta name="viewport" content="width=device-width, initial-scale=1.0">).
+Linha 6: Título da página exibido na barra de título do navegador (<title>Menu Dropdown</title>).
+Linha 53-72: Corpo da página (body):
+Linha 55-60: Estrutura do menu dropdown usando elementos HTML:
+<nav> (Linha 54-61): Contêiner do menu.
+<ul class="drop-down closed"> (Linha 55): Lista não ordenada com a classe "drop-down" (inicialmente fechada).
+<li><a href="#" class="nav-button">Home</a></li> (Linha 56): Item da lista com um link "Home".
+
+
+CSS (Linhas 7-51):Estilos CSS embutidos no cabeçalho da página para estilizar elementos HTML:
+html, body (Linha 9): Define o fundo da página como verde claro.
+nav (Linha 11): Adiciona uma margem superior de 40 pixels ao elemento <nav>.
+.drop-down (Linha 14): Estiliza o menu dropdown.
+.closed (Linha 29): Define a altura do menu quando fechado.
+li (Linha 37): Adiciona uma borda inferior aos itens da lista.
+a (Linha 37): Estiliza os links do menu.
+a:after (Linha 42): Adiciona um triângulo após o primeiro link.
+JavaScript (Linhas 47-57):
+
+Linha 56: Abertura da tag <script> para incluir JavaScript.
+Linhas 56-64: JavaScript para adicionar interatividade ao menu dropdown:
+document.querySelector('.nav-button') (Linha 59): Seleciona o botão "Home" com a classe "nav-button".
+.addEventListener('click', function() {...}, false) (Linha 59-61): Adiciona um evento de clique ao botão.
+this.parentNode.parentNode.classList.toggle('closed') (Linha 61): Dentro da função de clique, this se refere ao botão "Home". O código acessa o elemento pai do botão duas vezes (o primeiro pai é o <a>, o segundo é o <li>, e o terceiro é o <ul>), depois alterna a classe "closed" no elemento do menu dropdown pai (<ul>). Isso controla a altura do menu, permitindo que ele seja aberto e fechado.
+-->

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body {
+
+    text-align: center;
+}
+
+.boxer{
+
+    background-color: aquamarine;
+}
+input{
+    background-color: aqua;
+}
+
+    </style>
+</head>
+<body>
+    <div class="boxer">
+
+        <h1>Um texto qualquer</h1>
+    </div>
+    <div class="box">
+
+        <p>ddhd</p>
+        <input type="text" placeholder="digite um valor" id="numero">
+        <br>
+        <br>
+        <button onclick="go()">enviar</button>
+    </div>
+    <script>
+        function go()
+        {
+
+            var valordoinput = document.getElementById('numero').value;
+            alert (valordoinput);
+        }
+    </script>
+</body>
+</html>
