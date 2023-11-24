@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova Yann Lucas</title>
+    <link rel="stylesheet" href="style/prova.css">
+    <style>
+        form {
+            width: 100%;
+            min-width: 450px;
+            text-align: right;
+        }
+
+        form label {
+            display: inline-block;
+            width: calc(20% - 30px);
+            text-align: left;
+            margin: 10px;
+        }
+
+        form label.erro {
+            width: calc(100% - 20px);
+            padding: 10px;
+            background-color: rgb(255, 190, 190);
+            color: rgb(86, 2, 2);
+            text-align: center;
+        }
+
+        form label.sucesso {
+            width: calc(100% - 20px);
+            padding: 10px;
+            background-color: rgb(190, 255, 212);
+            color: rgb(2, 86, 41);
+            text-align: center;
+        }
+
+        form input {
+            width: calc(80% - 22px);
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Header</h1>
+        <nav>
+            <ul>
+                <li><a href="#">link 1</a></li>
+                <li><a href="#">link 2</a></li>
+                <li><a href="#">link 3</a></li>
+                <li><a href="#">link 4</a></li>
+            </ul>
+        </nav>
+        <!-- Menu Dropdown -->
+        <button class="dropdown-button" onclick="toggleDropdown()">Menu</button>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="#">link 1</a>
+            <a href="#">link 2</a>
+            <a href="#">link 3</a>
+            <a href="#">link 4</a>
+        </div>
+
+        <script>
+            // Função para mostrar/ocultar o menu dropdown
+            function toggleDropdown() {
+                var dropdown = document.getElementById("myDropdown");
+                if (dropdown.style.display === "block") {
+                    dropdown.style.display = "none";
+                } else {
+                    dropdown.style.display = "block";
+                }
+            }
+
+            // Fechar o menu dropdown quando o usuário clicar fora dele
+            window.onclick = function (event) {
+                if (!event.target.matches('.dropdown-button')) {
+                    var dropdown = document.getElementById("myDropdown");
+                    if (dropdown.style.display === "block") {
+                        dropdown.style.display = "none";
+                    }
+                }
+            }
+        </script>
+    </header>
+
+
+    <main>
+        <aside>
+            <h2>aside</h2>
+            <article>
+                <h2>article</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos aliquid perspiciatis natus vitae
+                    obcaecati, ut vero nesciunt fuga nam facilis iusto necessitatibus id eius possimus? Quo aliquam
+                    perspiciatis impedit architecto. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Asperiores quas aut, quis saepe itaque ea voluptatibus est similique laudantium. Voluptate
+                    praesentium sint esse dolorum fugiat aspernatur consectetur assumenda quam. Corrupti. Lorem ipsum
+                    dolor sit amet consectetur adipisicing elit.</p>
+            </article>
+        </aside>
+        <section>
+            <section>
+                <h2>Cadastro de Agente</h2>
+                <p>Contem um javascript para verificação da senha</p>
+                <form onsubmit="salvarUsuario(event)">
+                    <label for="nome">Nome: </label> <input type="text" name="nome" id="nome"
+                        placeholder="Digite seu nome" required>
+                    <label for="email">E-mail: </label> <input type="email" name="email" id="email"
+                        placeholder="Digite seu email" required>
+                    <label for="password">Senha: </label>
+                    <input id="password" class="input-field" type="password" name="password"
+                        placeholder="Digite sua senha" required>
+                    <label for="password">Confirme sua senha:</label>
+                    <input id="Confirmpassword" class="input-field" type="password" name="password"
+                        placeholder="Confirme sua senha" required>
+                    <div class="error-message" id="error-message"></div>
+                    <button>Cadastrar</button>
+                </form>
+            </section>
+            <script src="assets/js/prova.js"></script>
+        </section>
+        <aside>
+            <h2>aside</h2>
+            <article>
+                <h2>article com table</h2>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Agente</th>
+                            <th>Classe</th>
+                            <th>Arma favorita</th>
+                            <th>Pistola favorita</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Neon</td>
+                            <td>Duelista</td>
+                            <td>Vandal</td>
+                            <td>Ghost</td>
+                        </tr>
+                        <tr>
+                            <td>KAYO</td>
+                            <td>Iniciador</td>
+                            <td>Vandal</td>
+                            <td>Xeriff</td>
+                        </tr>
+                        <tr>
+                            <td>Cypher</td>
+                            <td>Sentinela</td>
+                            <td>Phantom</td>
+                            <td>Ghost</td>
+                        </tr>
+                        <tr>
+                            <td>Brimstone</td>
+                            <td>Controlador</td>
+                            <td>Judge</td>
+                            <td>Shorty</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </aside>
+    </main>
+    <div class="container">
+        <style>
+            img {
+                margin: auto;
+                display: block;
+            }
+        </style>
+        <section>
+            <img src="assets/fade.png" style="width: 200px;" alt="Fade">
+        </section>
+        <section style="display: flex; align-items: center;">
+            <img src="assets/neon.png" style="width: 200px;" alt="Fade">
+        </section>
+        <section style="display: flex; align-items: center;">
+            <img src="assets/raze.png" style="width: 200px;" alt="Fade">
+        </section>
+        <section style="display: flex; align-items: center;">
+            <img src="assets/yoru.png" style="width: 200px;" alt="Fade">
+        </section>
+    </div>
+    <div class="container">
+        <section>
+            <p>section</p>
+            <article>
+                <p>article</p>
+                <header>header</header>
+                <section>
+                    <p>section</p>
+                </section>
+                <footer>
+                    <p>footer</p>
+                </footer>
+            </article>
+        </section>
+        <section>
+            <h2>section</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et eos accusantium quo quidem commodi
+                pariatur ratione saepe obcaecati quas ut, cupiditate sunt. Fugiat ut vitae, ducimus alias nam
+                necessitatibus voluptatum. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed ducimus ex quae
+                nulla error et velit, vel autem fugiat adipisci ipsam quod commodi saepe ipsa nemo dolorum hic quia
+                enim!</p>
+        </section>
+        </section>
+    </div>
+    <footer>
+        <p>footer</p>
+    </footer>
+
+</body>
+
+</html>

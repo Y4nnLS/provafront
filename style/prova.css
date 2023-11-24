@@ -1,0 +1,131 @@
+/* reset css */
+* {
+    html, body, div, h1, h2, p,
+    a, img, dl, dt, dd, ol, ul, li,
+    form, label, table, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed, 
+    figure, figcaption, footer, header, hgroup, 
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure, 
+    footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+    body {
+        line-height: 1;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    blockquote, q {
+        quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    /* largura*/
+    height: auto;
+    /* altura, nesse caso a propiredade auto se refere ao crescimento da estrutura de acordo com o conteudo que for inserido*/
+    position: relative;
+    /* posicionamento*/
+    margin: 75px auto 0 auto;
+    /* margem e posicionamento atuam juntos, centalizando a estrutura main*/
+}
+
+main {
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+main>aside{
+    width: 40%;
+}
+main>section {
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.container>section {
+    width: 100%;
+}
+
+.container,
+header,
+nav,
+section,
+article,
+aside,
+footer {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav li {
+    display: inline;
+    margin-right: 10px;
+}
+
+/* Estilo para o botão do menu */
+.dropdown-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Estilo para o conteúdo do menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Estilo para os itens do menu */
+.dropdown-content a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+}
