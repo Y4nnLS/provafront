@@ -1,12 +1,49 @@
 /* reset css */
 * {
-    html, body, div, h1, h2, p,
-    a, img, dl, dt, dd, ol, ul, li,
-    form, label, table, tbody, tfoot, thead, tr, th, td,
-    article, aside, canvas, details, embed, 
-    figure, figcaption, footer, header, hgroup, 
-    menu, nav, output, ruby, section, summary,
-    time, mark, audio, video {
+
+    html,
+    body,
+    div,
+    h1,
+    h2,
+    p,
+    a,
+    img,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    form,
+    label,
+    table,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    article,
+    aside,
+    canvas,
+    details,
+    embed,
+    figure,
+    figcaption,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    output,
+    ruby,
+    section,
+    summary,
+    time,
+    mark,
+    audio,
+    video {
         margin: 0;
         padding: 0;
         border: 0;
@@ -14,43 +51,59 @@
         font: inherit;
         vertical-align: baseline;
     }
+
     /* HTML5 display-role reset for older browsers */
-    article, aside, details, figcaption, figure, 
-    footer, header, hgroup, menu, nav, section {
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
         display: block;
     }
+
     body {
         line-height: 1;
     }
-    ol, ul {
+
+    ol,
+    ul {
         list-style: none;
     }
-    blockquote, q {
+
+    blockquote,
+    q {
         quotes: none;
     }
-    blockquote:before, blockquote:after,
-    q:before, q:after {
+
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
         content: '';
         content: none;
     }
+
     table {
         border-collapse: collapse;
         border-spacing: 0;
     }
 }
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     width: 100%;
-    /* largura*/
     height: auto;
-    /* altura, nesse caso a propiredade auto se refere ao crescimento da estrutura de acordo com o conteudo que for inserido*/
     position: relative;
-    /* posicionamento*/
-    margin: 75px auto 0 auto;
-    /* margem e posicionamento atuam juntos, centalizando a estrutura main*/
+    margin: 10px auto 0 auto;
 }
 
 main {
@@ -59,9 +112,11 @@ main {
     padding: 10px;
     border: 1px solid #ddd;
 }
-main>aside{
+
+main>aside {
     width: 40%;
 }
+
 main>section {
     width: 100%;
 }
@@ -79,9 +134,7 @@ main>section {
 
 .container,
 header,
-nav,
 section,
-article,
 aside,
 footer {
     margin: 10px;
@@ -95,11 +148,20 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: space-around;
+
+
 }
 
 nav li {
     display: inline;
     margin-right: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 /* Estilo para o botão do menu */
